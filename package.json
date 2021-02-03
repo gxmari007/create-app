@@ -1,0 +1,31 @@
+{
+  "name": "@gxmari007/creat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "create-lib": "index.js"
+  },
+  "author": "James Gao",
+  "license": "MIT",
+  "scripts": {
+    "commit": "cz"
+  },
+  "homepage": "https://github.com/gxmari007/create-app",
+  "repository": "git+https://github.com:gxmari007/create-app.git",
+  "publishConfig": {
+    "access": "public"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "enquirer": "^2.3.6",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0"
+  }
+}
