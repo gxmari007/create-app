@@ -1,6 +1,6 @@
 dependencies:
+  commander: 7.0.0
   enquirer: 2.3.6
-  minimist: 1.2.5
 devDependencies:
   commitizen: 4.2.3
   cz-conventional-changelog: 3.3.0
@@ -340,6 +340,13 @@ packages:
     resolution:
       integrity: sha1-wqCah6y95pVD3m9j+jmVyCbFNqI=
       tarball: color-name/download/color-name-1.1.4.tgz
+  /commander/7.0.0:
+    dev: false
+    engines:
+      node: '>= 10'
+    resolution:
+      integrity: sha1-Piu/2LtnJHYJgJiPtbIrfua3GrI=
+      tarball: commander/download/commander-7.0.0.tgz
   /commitizen/4.2.3:
     dependencies:
       cachedir: 2.2.0
@@ -1139,6 +1146,7 @@ packages:
       integrity: sha1-UWbihkV/AzBgZL5Ul+jbsMPTIIM=
       tarball: minimatch/download/minimatch-3.0.4.tgz
   /minimist/1.2.5:
+    dev: true
     resolution:
       integrity: sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
       tarball: minimist/download/minimist-1.2.5.tgz
@@ -1680,7 +1688,7 @@ packages:
       integrity: sha1-O1k63ZRIdgd9TWg/7gEIG9n/8x4=
       tarball: yaml/download/yaml-1.10.0.tgz
 specifiers:
+  commander: ^7.0.0
   commitizen: ^4.2.3
   cz-conventional-changelog: ^3.3.0
   enquirer: ^2.3.6
-  minimist: ^1.2.5

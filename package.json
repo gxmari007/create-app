@@ -2,11 +2,12 @@
   "name": "@gxmari007/creat-app",
   "version": "1.0.0",
   "main": "index.js",
-  "bin": {
-    "create-lib": "index.js"
-  },
   "author": "James Gao",
   "license": "MIT",
+  "bin": {
+    "create-app": "index.js",
+    "template": "index.js"
+  },
   "scripts": {
     "commit": "cz"
   },
@@ -21,8 +22,8 @@
     }
   },
   "dependencies": {
-    "enquirer": "^2.3.6",
-    "minimist": "^1.2.5"
+    "commander": "^7.0.0",
+    "enquirer": "^2.3.6"
   },
   "devDependencies": {
     "commitizen": "^4.2.3",
