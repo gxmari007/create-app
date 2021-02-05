@@ -7,7 +7,7 @@ const { prompt } = require('enquirer');
 const pkg = require('./package.json');
 
 const cwd = process.cwd();
-const templates = ['lib-ts'];
+const templates = ['lib-ts', 'vite-plugin'];
 const renameFiles = {
   _gitignore: '.gitignore',
 };

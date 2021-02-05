@@ -15,6 +15,7 @@ then follow the prompts.
 ## Template
 
 - lib-ts
+- vite-plugin
 
 ## License
 
