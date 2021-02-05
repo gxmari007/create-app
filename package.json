@@ -8,6 +8,10 @@
     "create-app": "index.js",
     "template": "index.js"
   },
+  "files": [
+    "index.js",
+    "templates"
+  ],
   "scripts": {
     "commit": "cz"
   },
