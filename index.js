@@ -88,7 +88,11 @@ program
       template = t;
     }
 
-    const templateDir = path.join(__dirname, 'templates', `template-${template}`);
+    const templateDir = path.join(
+      __dirname,
+      'templates',
+      `template-${template}`,
+    );
     const files = fs.readdirSync(templateDir);
 
     const write = (file, content) => {
@@ -116,7 +120,7 @@ program
           message: `
             Target directory ${targetDir} is not empty.
             Remove existing files and continue?
-          `
+          `,
         });
 
         if (yes) {
