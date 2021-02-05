@@ -1,6 +1,6 @@
 {
   "name": "@gxmari007/creat-app",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "author": "James Gao",
   "license": "MIT",
@@ -13,7 +13,8 @@
     "templates"
   ],
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "release": "npx bumpp --commit --tag --push && npm publish"
   },
   "homepage": "https://github.com/gxmari007/create-app",
   "repository": "git+https://github.com:gxmari007/create-app.git",
