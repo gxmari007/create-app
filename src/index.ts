@@ -3,6 +3,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import { program } from 'commander';
+import { prompt } from 'enquirer';
 
 import pkg from '../package.json';
 
@@ -50,6 +51,44 @@ program.helpOption('-h, --help', 'output usage information');
 program
   .name('create-app')
   .arguments('[project-name]')
-  .option('-t, --template', 'select a template');
+  .option('-t, --template', 'select a template')
+  .action(async (projectName, options) => {
+    // determine project folder
+    let projectDir: string = projectName;
+
+    if (!projectDir) {
+      const { name } = await prompt<{ name: string }>({
+        type: 'input',
+        name: 'name',
+        message: 'Project name:',
+        initial: 'app',
+      });
+
+      projectDir = name;
+    }
+
+    const root = path.join(cwd, projectDir);
+
+    // determine template
+    let template: string = options.template;
+
+    if (!template) {
+      const { t } = await prompt<{ t: string }>({
+        type: 'select',
+        name: 't',
+        message: 'Select a template:',
+        choices: templates,
+      });
+
+      template = t;
+    }
+
+    const templateDir = path.join(
+      __dirname,
+      'templates',
+      `template-${template}`,
+    );
+    const files = fs.readdirSync(templateDir);
+  });
 
 program.parse(process.argv);
