@@ -1,4 +1,7 @@
-# creat-app
+# create-app
+
+[![npm (scoped)](https://img.shields.io/npm/v/@gxmari007/create-app)](https://www.npmjs.com/package/@gxmari007/create-app)
+[![GitHub license](https://img.shields.io/github/license/gxmari007/create-app)](https://github.com/gxmari007/create-app/blob/main/LICENSE)
 
 A scaffolding tool for creating templates.
 
