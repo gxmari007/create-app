@@ -9,6 +9,9 @@ import pkg from '../package.json';
 
 const cwd = process.cwd();
 const templates = ['lib-ts', 'vite-plugin'];
+const renameFiles = {
+  _gitignore: '.gitignore',
+};
 
 const copy = (src: string, dest: string) => {
   const stat = fs.statSync(src);
@@ -61,7 +64,7 @@ program
         type: 'input',
         name: 'name',
         message: 'Project name:',
-        initial: 'app',
+        initial: 'my-app',
       });
 
       projectDir = name;
@@ -89,6 +92,55 @@ program
       `template-${template}`,
     );
     const files = fs.readdirSync(templateDir);
+    const write = (file: string, content?: string) => {
+      const targetPath = renameFiles[file]
+        ? path.join(root, renameFiles[file])
+        : path.join(root, file);
+
+      if (content) {
+        fs.writeFileSync(targetPath, content);
+      } else {
+        copy(path.join(templateDir, file), targetPath);
+      }
+    };
+
+    if (!fs.existsSync(root)) {
+      fs.mkdirSync(root, { recursive: true });
+    } else {
+      const existing = fs.readdirSync(root);
+
+      if (existing.length) {
+        const { yes } = await prompt<{ yes: boolean }>({
+          type: 'confirm',
+          name: 'yes',
+          initial: 'Y',
+          message: `
+            Target directory ${projectDir} is not empty.
+            Remove existing files and continue?
+          `,
+        });
+
+        if (yes) {
+          emptyDir(root);
+        } else {
+          // exit program
+          return;
+        }
+      }
+    }
+
+    for (const file of files) {
+      if (file === 'package.json') {
+        const templatePkg = await import(path.join(templateDir, file));
+
+        templatePkg.name = path.basename(root);
+        write(file, JSON.stringify(templatePkg, null, 2));
+      } else {
+        write(file);
+      }
+    }
+
+    console.log('\nDone.');
   });
 
 program.parse(process.argv);

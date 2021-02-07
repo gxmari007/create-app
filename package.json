@@ -1,19 +1,21 @@
 {
   "name": "@gxmari007/creat-app",
   "version": "0.0.0",
-  "main": "index.js",
   "author": "James Gao",
   "license": "MIT",
+  "main": "dist/index.js",
   "bin": {
-    "create-app": "index.js",
-    "template": "index.js"
+    "create-app": "dist/index.js",
+    "template": "dist/index.js"
   },
   "files": [
-    "index.js",
+    "dist",
     "templates"
   ],
   "scripts": {
+    "build": "tsup src/index.ts",
     "commit": "cz",
+    "prepublishOnly": "npm run build",
     "release": "npx bumpp --commit --tag --push && npm publish"
   },
   "homepage": "https://github.com/gxmari007/create-app",
@@ -40,6 +42,7 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
+    "tsup": "^3.12.1",
     "typescript": "^4.1.3"
   }
 }
