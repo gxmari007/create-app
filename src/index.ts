@@ -86,8 +86,9 @@ program
       template = t;
     }
 
-    const templateDir = path.join(
+    const templateDir = path.resolve(
       __dirname,
+      '..',
       'templates',
       `template-${template}`,
     );
