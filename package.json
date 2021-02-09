@@ -13,7 +13,8 @@
     "templates"
   ],
   "scripts": {
-    "build": "tsup src/index.ts",
+    "dev": "npm run build -- --watch",
+    "build": "tsup src/index.ts --format cjs",
     "commit": "cz",
     "prepublishOnly": "npm run build",
     "release": "npx bumpp --commit --tag --push && npm publish"

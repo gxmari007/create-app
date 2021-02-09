@@ -52,7 +52,7 @@ program.version(pkg.version, '-v, --version', 'output the version number');
 program.helpOption('-h, --help', 'output usage information');
 
 program
-  .name('create-app')
+  .name('create-template')
   .arguments('[project-name]')
   .option('-t, --template', 'select a template')
   .action(async (projectName, options) => {
@@ -115,10 +115,7 @@ program
           type: 'confirm',
           name: 'yes',
           initial: 'Y',
-          message: `
-            Target directory ${projectDir} is not empty.
-            Remove existing files and continue?
-          `,
+          message: `Target directory ${projectDir} is not empty.\n  Remove existing files and continue?`,
         });
 
         if (yes) {
@@ -144,4 +141,6 @@ program
     console.log('\nDone.');
   });
 
-program.parse(process.argv);
+program.parseAsync(process.argv).catch((err) => {
+  console.error(err);
+});
