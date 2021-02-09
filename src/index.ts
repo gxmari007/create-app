@@ -11,6 +11,7 @@ const cwd = process.cwd();
 const templates = ['lib-ts', 'vite-plugin'];
 const renameFiles = {
   _gitignore: '.gitignore',
+  '_package.json': 'package.json',
 };
 
 const copy = (src: string, dest: string) => {
@@ -52,7 +53,7 @@ program.version(pkg.version, '-v, --version', 'output the version number');
 program.helpOption('-h, --help', 'output usage information');
 
 program
-  .name('create-app')
+  .name('create-template')
   .arguments('[project-name]')
   .option('-t, --template', 'select a template')
   .action(async (projectName, options) => {
@@ -115,10 +116,7 @@ program
           type: 'confirm',
           name: 'yes',
           initial: 'Y',
-          message: `
-            Target directory ${projectDir} is not empty.
-            Remove existing files and continue?
-          `,
+          message: `Target directory ${projectDir} is not empty.\n  Remove existing files and continue?`,
         });
 
         if (yes) {
@@ -131,7 +129,7 @@ program
     }
 
     for (const file of files) {
-      if (file === 'package.json') {
+      if (file === '_package.json') {
         const templatePkg = await import(path.join(templateDir, file));
 
         templatePkg.name = path.basename(root);
@@ -144,4 +142,6 @@ program
     console.log('\nDone.');
   });
 
-program.parse(process.argv);
+program.parseAsync(process.argv).catch((err) => {
+  console.error(err);
+});
