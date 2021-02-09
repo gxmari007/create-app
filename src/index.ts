@@ -11,6 +11,7 @@ const cwd = process.cwd();
 const templates = ['lib-ts', 'vite-plugin'];
 const renameFiles = {
   _gitignore: '.gitignore',
+  '_package.json': 'package.json',
 };
 
 const copy = (src: string, dest: string) => {
@@ -128,7 +129,7 @@ program
     }
 
     for (const file of files) {
-      if (file === 'package.json') {
+      if (file === '_package.json') {
         const templatePkg = await import(path.join(templateDir, file));
 
         templatePkg.name = path.basename(root);
