@@ -17,7 +17,12 @@
     "build": "tsup src/index.ts --format cjs",
     "commit": "cz",
     "prepublishOnly": "npm run build",
-    "release": "npx bumpp --commit --tag --push && npm publish"
+    "release": "standard-version"
+  },
+  "standard-version": {
+    "scripts": {
+      "posttag": "git push --follow-tags origin main && npm publish"
+    }
   },
   "homepage": "https://github.com/gxmari007/create-template",
   "repository": "git+https://github.com:gxmari007/create-template.git",
@@ -43,6 +48,7 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
+    "standard-version": "^9.1.0",
     "tsup": "^3.12.1",
     "typescript": "^4.1.3"
   }
