@@ -1,6 +1,6 @@
 {
   "name": "@gxmari007/create-template",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "James Gao",
   "license": "MIT",
   "main": "dist/index.js",
