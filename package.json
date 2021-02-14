@@ -16,12 +16,14 @@
     "dev": "npm run build -- --watch",
     "build": "tsup src/index.ts --format cjs",
     "commit": "cz",
+    "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "release": "standard-version"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint"
     }
   },
   "standard-version": {
