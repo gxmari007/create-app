@@ -8,7 +8,7 @@ import { prompt } from 'enquirer';
 import pkg from '../package.json';
 
 const cwd = process.cwd();
-const templates = ['lib-ts', 'vite-plugin'];
+const templates = ['components', 'lib-ts', 'vite-plugin'];
 const renameFiles = {
   _gitignore: '.gitignore',
   '_package.json': 'package.json',
