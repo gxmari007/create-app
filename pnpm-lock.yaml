@@ -1952,7 +1952,7 @@ packages:
       tarball: fs-access/download/fs-access-1.0.1.tgz
   /fs-extra/8.1.0:
     dependencies:
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: true
@@ -1960,7 +1960,7 @@ packages:
       node: '>=6 <7 || >=8'
     resolution:
       integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=
-      tarball: fs-extra/download/fs-extra-8.1.0.tgz
+      tarball: fs-extra/download/fs-extra-8.1.0.tgz?cache=0&sync_timestamp=1611110039897&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-8.1.0.tgz
   /fs-extra/9.1.0:
     dependencies:
       at-least-node: 1.0.0
@@ -2183,11 +2183,6 @@ packages:
     resolution:
       integrity: sha1-GvU4t2ajtUDr+1ijKy4tWJcyHYM=
       tarball: globby/download/globby-11.0.2.tgz
-  /graceful-fs/4.2.4:
-    dev: true
-    resolution:
-      integrity: sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
-      tarball: graceful-fs/download/graceful-fs-4.2.4.tgz
   /graceful-fs/4.2.6:
     dev: true
     resolution:
@@ -2729,7 +2724,7 @@ packages:
   /jsonfile/4.0.0:
     dev: true
     optionalDependencies:
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
       tarball: jsonfile/download/jsonfile-4.0.0.tgz
@@ -4828,7 +4823,7 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha1-O1k63ZRIdgd9TWg/7gEIG9n/8x4=
-      tarball: yaml/download/yaml-1.10.0.tgz?cache=0&sync_timestamp=1612175917850&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyaml%2Fdownload%2Fyaml-1.10.0.tgz
+      tarball: yaml/download/yaml-1.10.0.tgz
   /yargs-parser/18.1.3:
     dependencies:
       camelcase: 5.3.1
