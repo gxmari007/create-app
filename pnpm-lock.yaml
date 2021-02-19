@@ -1960,7 +1960,7 @@ packages:
       node: '>=6 <7 || >=8'
     resolution:
       integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=
-      tarball: fs-extra/download/fs-extra-8.1.0.tgz?cache=0&sync_timestamp=1611110039897&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-8.1.0.tgz
+      tarball: fs-extra/download/fs-extra-8.1.0.tgz
   /fs-extra/9.1.0:
     dependencies:
       at-least-node: 1.0.0
