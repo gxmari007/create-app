@@ -2,6 +2,8 @@ dependencies:
   commander: 7.0.0
   enquirer: 2.3.6
 devDependencies:
+  '@commitlint/cli': 11.0.0
+  '@commitlint/config-conventional': 11.0.0
   '@types/node': 14.14.25
   '@typescript-eslint/eslint-plugin': 4.14.2_e5f964fa93e839b7a7927397f6cb9cb1
   '@typescript-eslint/parser': 4.14.2_eslint@7.19.0+typescript@4.1.3
@@ -10,6 +12,7 @@ devDependencies:
   eslint: 7.19.0
   eslint-config-prettier: 7.2.0_eslint@7.19.0
   eslint-plugin-prettier: 3.3.1_ea5601adac11a59dc1e2379624986c36
+  husky: 4.3.8
   prettier: 2.2.1
   standard-version: 9.1.0
   tsup: 3.12.1_typescript@4.1.3
@@ -37,14 +40,92 @@ packages:
     resolution:
       integrity: sha1-irU4OT4ANwsmJxsB+gj38n8ueVw=
       tarball: '@babel/highlight/download/@babel/highlight-7.12.13.tgz?cache=0&sync_timestamp=1612319002331&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fhighlight%2Fdownload%2F%40babel%2Fhighlight-7.12.13.tgz'
+  /@babel/runtime/7.12.13:
+    dependencies:
+      regenerator-runtime: 0.13.7
+    dev: true
+    resolution:
+      integrity: sha1-CiFFI1KwJULbD/uSisLTyny21m0=
+      tarball: '@babel/runtime/download/@babel/runtime-7.12.13.tgz'
+  /@commitlint/cli/11.0.0:
+    dependencies:
+      '@babel/runtime': 7.12.13
+      '@commitlint/format': 11.0.0
+      '@commitlint/lint': 11.0.0
+      '@commitlint/load': 11.0.0
+      '@commitlint/read': 11.0.0
+      chalk: 4.1.0
+      core-js: 3.8.3
+      get-stdin: 8.0.0
+      lodash: 4.17.20
+      resolve-from: 5.0.0
+      resolve-global: 1.0.0
+      yargs: 15.4.1
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    hasBin: true
+    resolution:
+      integrity: sha1-aYGZvFKv7VCqKBaSN3WPoUpntdM=
+      tarball: '@commitlint/cli/download/@commitlint/cli-11.0.0.tgz'
+  /@commitlint/config-conventional/11.0.0:
+    dependencies:
+      conventional-changelog-conventionalcommits: 4.5.0
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-P6MAobY5JzlG3jw/FeHNpRgzNCI=
+      tarball: '@commitlint/config-conventional/download/@commitlint/config-conventional-11.0.0.tgz'
+  /@commitlint/ensure/11.0.0:
+    dependencies:
+      '@commitlint/types': 11.0.0
+      lodash: 4.17.20
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-Pnlrloq1tyvG+KYEAHZAYwbJh/s=
+      tarball: '@commitlint/ensure/download/@commitlint/ensure-11.0.0.tgz'
   /@commitlint/execute-rule/11.0.0:
     dev: true
     engines:
       node: '>=v10.22.0'
-    optional: true
     resolution:
       integrity: sha1-PtYKt6MwGeWNkOLYkbddffd7S00=
       tarball: '@commitlint/execute-rule/download/@commitlint/execute-rule-11.0.0.tgz'
+  /@commitlint/format/11.0.0:
+    dependencies:
+      '@commitlint/types': 11.0.0
+      chalk: 4.1.0
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-rEewucpGVAwAgschspB5Tme9xRs=
+      tarball: '@commitlint/format/download/@commitlint/format-11.0.0.tgz'
+  /@commitlint/is-ignored/11.0.0:
+    dependencies:
+      '@commitlint/types': 11.0.0
+      semver: 7.3.2
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-e4A+2lYnbb5/7FHrFRBnYZhGjzk=
+      tarball: '@commitlint/is-ignored/download/@commitlint/is-ignored-11.0.0.tgz'
+  /@commitlint/lint/11.0.0:
+    dependencies:
+      '@commitlint/is-ignored': 11.0.0
+      '@commitlint/parse': 11.0.0
+      '@commitlint/rules': 11.0.0
+      '@commitlint/types': 11.0.0
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-AeBizRsOfD11aqLCRkYuC2ozSKQ=
+      tarball: '@commitlint/lint/download/@commitlint/lint-11.0.0.tgz'
   /@commitlint/load/11.0.0:
     dependencies:
       '@commitlint/execute-rule': 11.0.0
@@ -57,10 +138,37 @@ packages:
     dev: true
     engines:
       node: '>=v10.22.0'
-    optional: true
     resolution:
       integrity: sha1-9zZWLw/6fnc/iAj+qTMZBC7hghE=
       tarball: '@commitlint/load/download/@commitlint/load-11.0.0.tgz'
+  /@commitlint/message/11.0.0:
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-g1VMPLvIhP0HtHNZO8PpS8qj7gU=
+      tarball: '@commitlint/message/download/@commitlint/message-11.0.0.tgz'
+  /@commitlint/parse/11.0.0:
+    dependencies:
+      conventional-changelog-angular: 5.0.12
+      conventional-commits-parser: 3.2.0
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-0YsIz2fDXQIRUgfXAJMGoujnyQE=
+      tarball: '@commitlint/parse/download/@commitlint/parse-11.0.0.tgz'
+  /@commitlint/read/11.0.0:
+    dependencies:
+      '@commitlint/top-level': 11.0.0
+      fs-extra: 9.1.0
+      git-raw-commits: 2.0.10
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-8kJAVIxjWHu6E5+lo2TKuSYHcBY=
+      tarball: '@commitlint/read/download/@commitlint/read-11.0.0.tgz'
   /@commitlint/resolve-extends/11.0.0:
     dependencies:
       import-fresh: 3.3.0
@@ -70,15 +178,41 @@ packages:
     dev: true
     engines:
       node: '>=v10.22.0'
-    optional: true
     resolution:
       integrity: sha1-FY7L4n1KKlHUJhEaAUeOIW+7EDY=
       tarball: '@commitlint/resolve-extends/download/@commitlint/resolve-extends-11.0.0.tgz'
+  /@commitlint/rules/11.0.0:
+    dependencies:
+      '@commitlint/ensure': 11.0.0
+      '@commitlint/message': 11.0.0
+      '@commitlint/to-lines': 11.0.0
+      '@commitlint/types': 11.0.0
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-vbMQzG/FXJ+NfZF6IraQVcU1w3U=
+      tarball: '@commitlint/rules/download/@commitlint/rules-11.0.0.tgz'
+  /@commitlint/to-lines/11.0.0:
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-ht6hUcEO6kHjnqlvpN4Hg5JYp/4=
+      tarball: '@commitlint/to-lines/download/@commitlint/to-lines-11.0.0.tgz'
+  /@commitlint/top-level/11.0.0:
+    dependencies:
+      find-up: 5.0.0
+    dev: true
+    engines:
+      node: '>=v10.22.0'
+    resolution:
+      integrity: sha1-uy0bbl7TvlaHRjO1nh994RjDJ4M=
+      tarball: '@commitlint/top-level/download/@commitlint/top-level-11.0.0.tgz'
   /@commitlint/types/11.0.0:
     dev: true
     engines:
       node: '>=v10.22.0'
-    optional: true
     resolution:
       integrity: sha1-cZzwX8wau2UzYQouD13R5h6sFP4=
       tarball: '@commitlint/types/download/@commitlint/types-11.0.0.tgz'
@@ -501,6 +635,13 @@ packages:
     resolution:
       integrity: sha1-SDFDxWeu7UeFdZwIZXhtx319LjE=
       tarball: astral-regex/download/astral-regex-2.0.0.tgz
+  /at-least-node/1.0.0:
+    dev: true
+    engines:
+      node: '>= 4.0.0'
+    resolution:
+      integrity: sha1-YCzUtG6EStTv/JKoARo8RuAjjcI=
+      tarball: at-least-node/download/at-least-node-1.0.0.tgz
   /atob/2.1.2:
     dev: true
     engines:
@@ -717,6 +858,11 @@ packages:
     resolution:
       integrity: sha1-7pznu+vSt59J8wR5nVRo4x4U5oo=
       tarball: chokidar/download/chokidar-3.5.1.tgz
+  /ci-info/2.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-Z6npZL4xpR4V5QENWObxKDQAL0Y=
+      tarball: ci-info/download/ci-info-2.0.0.tgz
   /class-utils/0.3.6:
     dependencies:
       arr-union: 3.1.0
@@ -833,6 +979,11 @@ packages:
     resolution:
       integrity: sha1-+2XnXtvd/S5WhVTotbBf/3pR/LM=
       tarball: compare-func/download/compare-func-2.0.0.tgz
+  /compare-versions/3.6.0:
+    dev: true
+    resolution:
+      integrity: sha1-GlaJkTaF5ah2N7jT/8p1UU7EHWI=
+      tarball: compare-versions/download/compare-versions-3.6.0.tgz
   /component-emitter/1.3.0:
     dev: true
     resolution:
@@ -1068,6 +1219,12 @@ packages:
     resolution:
       integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
       tarball: copy-descriptor/download/copy-descriptor-0.1.1.tgz
+  /core-js/3.8.3:
+    dev: true
+    requiresBuild: true
+    resolution:
+      integrity: sha1-whkG4fFPNon5OrzG4miDVQ3ZLdA=
+      tarball: core-js/download/core-js-3.8.3.tgz
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -1732,6 +1889,15 @@ packages:
     resolution:
       integrity: sha1-TJKBnstwg1YeT0okCoa+UZj1Nvw=
       tarball: find-up/download/find-up-5.0.0.tgz
+  /find-versions/4.0.0:
+    dependencies:
+      semver-regex: 3.1.2
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha1-PFflc7+XdpuMuN8Wk0tieRXaSWU=
+      tarball: find-versions/download/find-versions-4.0.0.tgz
   /findup-sync/3.0.0:
     dependencies:
       detect-file: 1.0.0
@@ -1786,7 +1952,7 @@ packages:
       tarball: fs-access/download/fs-access-1.0.1.tgz
   /fs-extra/8.1.0:
     dependencies:
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: true
@@ -1795,6 +1961,18 @@ packages:
     resolution:
       integrity: sha1-SdQ8RaiM2Wd2aMt74bRu/bjS4cA=
       tarball: fs-extra/download/fs-extra-8.1.0.tgz
+  /fs-extra/9.1.0:
+    dependencies:
+      at-least-node: 1.0.0
+      graceful-fs: 4.2.6
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha1-WVRGDHZKjaIJS6NVS/g55rmnyG0=
+      tarball: fs-extra/download/fs-extra-9.1.0.tgz?cache=0&sync_timestamp=1611110039897&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffs-extra%2Fdownload%2Ffs-extra-9.1.0.tgz
   /fs.realpath/1.0.0:
     dev: true
     resolution:
@@ -1846,6 +2024,13 @@ packages:
     resolution:
       integrity: sha1-uWjGsKBDhDJJAui/Gl3zJXmkUP4=
       tarball: get-stdin/download/get-stdin-4.0.1.tgz
+  /get-stdin/8.0.0:
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha1-y61qc/63X27rIrqeAfiaooqpelM=
+      tarball: get-stdin/download/get-stdin-8.0.0.tgz
   /get-value/2.0.6:
     dev: true
     engines:
@@ -1948,7 +2133,6 @@ packages:
     dev: true
     engines:
       node: '>=4'
-    optional: true
     resolution:
       integrity: sha1-sxnA3UYH81PzvpzKTHL8FIxJ9EU=
       tarball: global-dirs/download/global-dirs-0.1.1.tgz
@@ -1999,11 +2183,6 @@ packages:
     resolution:
       integrity: sha1-GvU4t2ajtUDr+1ijKy4tWJcyHYM=
       tarball: globby/download/globby-11.0.2.tgz
-  /graceful-fs/4.2.4:
-    dev: true
-    resolution:
-      integrity: sha1-Ila94U02MpWMRl68ltxGfKB6Kfs=
-      tarball: graceful-fs/download/graceful-fs-4.2.4.tgz
   /graceful-fs/4.2.6:
     dev: true
     resolution:
@@ -2116,6 +2295,26 @@ packages:
     resolution:
       integrity: sha1-bjXUzIevLF+Bbky5zjULqHo/Nw0=
       tarball: hosted-git-info/download/hosted-git-info-3.0.8.tgz
+  /husky/4.3.8:
+    dependencies:
+      chalk: 4.1.0
+      ci-info: 2.0.0
+      compare-versions: 3.6.0
+      cosmiconfig: 7.0.0
+      find-versions: 4.0.0
+      opencollective-postinstall: 2.0.3
+      pkg-dir: 5.0.0
+      please-upgrade-node: 3.2.0
+      slash: 3.0.0
+      which-pm-runs: 1.0.0
+    dev: true
+    engines:
+      node: '>=10'
+    hasBin: true
+    requiresBuild: true
+    resolution:
+      integrity: sha1-MRRAYL6WP9aFDlzI8Bmh3+GUKW0=
+      tarball: husky/download/husky-4.3.8.tgz
   /iconv-lite/0.4.24:
     dependencies:
       safer-buffer: 2.1.2
@@ -2525,10 +2724,19 @@ packages:
   /jsonfile/4.0.0:
     dev: true
     optionalDependencies:
-      graceful-fs: 4.2.4
+      graceful-fs: 4.2.6
     resolution:
       integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
       tarball: jsonfile/download/jsonfile-4.0.0.tgz
+  /jsonfile/6.1.0:
+    dependencies:
+      universalify: 2.0.0
+    dev: true
+    optionalDependencies:
+      graceful-fs: 4.2.6
+    resolution:
+      integrity: sha1-vFWyY0eTxnnsZAMJTrE2mKbsCq4=
+      tarball: jsonfile/download/jsonfile-6.1.0.tgz
   /jsonparse/1.3.1:
     dev: true
     engines:
@@ -3067,6 +3275,12 @@ packages:
     resolution:
       integrity: sha1-BnQoIw/WdEOyeUsiu6UotoZ5YtQ=
       tarball: onetime/download/onetime-2.0.1.tgz
+  /opencollective-postinstall/2.0.3:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-eg//l49tv6TQBiOPusmO1BmMMlk=
+      tarball: opencollective-postinstall/download/opencollective-postinstall-2.0.3.tgz
   /optionator/0.9.1:
     dependencies:
       deep-is: 0.1.3
@@ -3114,7 +3328,7 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha1-4drMvnjQ0TiMoYxk/qOOPlfjcGs=
-      tarball: p-limit/download/p-limit-3.1.0.tgz?cache=0&sync_timestamp=1606288651463&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fp-limit%2Fdownload%2Fp-limit-3.1.0.tgz
+      tarball: p-limit/download/p-limit-3.1.0.tgz
   /p-locate/2.0.0:
     dependencies:
       p-limit: 1.3.0
@@ -3339,6 +3553,22 @@ packages:
     resolution:
       integrity: sha1-ZDqSyviUVm+RsrmG0sZpUKji+4c=
       tarball: pirates/download/pirates-4.0.1.tgz
+  /pkg-dir/5.0.0:
+    dependencies:
+      find-up: 5.0.0
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha1-oC1q6+a6EzqSj3Suwguv3+a452A=
+      tarball: pkg-dir/download/pkg-dir-5.0.0.tgz
+  /please-upgrade-node/3.2.0:
+    dependencies:
+      semver-compare: 1.0.0
+    dev: true
+    resolution:
+      integrity: sha1-rt3T+ZTJM+StmLmdmlVu+g4v6UI=
+      tarball: please-upgrade-node/download/please-upgrade-node-3.2.0.tgz
   /posix-character-classes/0.1.1:
     dev: true
     engines:
@@ -3558,6 +3788,11 @@ packages:
     resolution:
       integrity: sha1-5Ve3mYMWu1PJ8fVvpiY1LGljBZ8=
       tarball: redent/download/redent-3.0.0.tgz
+  /regenerator-runtime/0.13.7:
+    dev: true
+    resolution:
+      integrity: sha1-ysLazIoepnX+qrrriugziYrkb1U=
+      tarball: regenerator-runtime/download/regenerator-runtime-0.13.7.tgz
   /regex-not/1.0.2:
     dependencies:
       extend-shallow: 3.0.2
@@ -3647,7 +3882,6 @@ packages:
     dev: true
     engines:
       node: '>=8'
-    optional: true
     resolution:
       integrity: sha1-oqed9K8so/Sb93753azTItrRklU=
       tarball: resolve-global/download/resolve-global-1.0.0.tgz
@@ -3765,6 +3999,18 @@ packages:
     resolution:
       integrity: sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
       tarball: safer-buffer/download/safer-buffer-2.1.2.tgz
+  /semver-compare/1.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-De4hahyUGrN+nvsXiPavxf9VN/w=
+      tarball: semver-compare/download/semver-compare-1.0.0.tgz
+  /semver-regex/3.1.2:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha1-NLTA02Hu8mLgcZnb7zFtDyqxGAc=
+      tarball: semver-regex/download/semver-regex-3.1.2.tgz
   /semver/5.7.1:
     dev: true
     hasBin: true
@@ -3777,6 +4023,14 @@ packages:
     resolution:
       integrity: sha1-7gpkyK9ejO6mdoexM3YeG+y9HT0=
       tarball: semver/download/semver-6.3.0.tgz?cache=0&sync_timestamp=1606868608439&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsemver%2Fdownload%2Fsemver-6.3.0.tgz
+  /semver/7.3.2:
+    dev: true
+    engines:
+      node: '>=10'
+    hasBin: true
+    resolution:
+      integrity: sha1-YElisFK4HtB4aq6EOJ/7pw/9OTg=
+      tarball: semver/download/semver-7.3.2.tgz?cache=0&sync_timestamp=1606868608439&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsemver%2Fdownload%2Fsemver-7.3.2.tgz
   /semver/7.3.4:
     dependencies:
       lru-cache: 6.0.0
@@ -3843,7 +4097,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha1-ZTm+hwwWWtvVJAIg2+Nh8bxNRjQ=
-      tarball: slash/download/slash-3.0.0.tgz
+      tarball: slash/download/slash-3.0.0.tgz?cache=0&sync_timestamp=1592894772800&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fslash%2Fdownload%2Fslash-3.0.0.tgz
   /slice-ansi/4.0.0:
     dependencies:
       ansi-styles: 4.3.0
@@ -4435,6 +4689,13 @@ packages:
     resolution:
       integrity: sha1-tkb2m+OULavOzJ1mOcgNwQXvqmY=
       tarball: universalify/download/universalify-0.1.2.tgz
+  /universalify/2.0.0:
+    dev: true
+    engines:
+      node: '>= 10.0.0'
+    resolution:
+      integrity: sha1-daSYTv7cSwiXXFrrc/Uw0C3yVxc=
+      tarball: universalify/download/universalify-2.0.0.tgz
   /unset-value/1.0.0:
     dependencies:
       has-value: 0.3.1
@@ -4488,6 +4749,11 @@ packages:
     resolution:
       integrity: sha1-2e8H3Od7mQK4o6j6SzHD4/fm6Ho=
       tarball: which-module/download/which-module-2.0.0.tgz
+  /which-pm-runs/1.0.0:
+    dev: true
+    resolution:
+      integrity: sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
+      tarball: which-pm-runs/download/which-pm-runs-1.0.0.tgz
   /which/1.3.1:
     dependencies:
       isexe: 2.0.0
@@ -4602,6 +4868,8 @@ packages:
       integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=
       tarball: yocto-queue/download/yocto-queue-0.1.0.tgz
 specifiers:
+  '@commitlint/cli': ^11.0.0
+  '@commitlint/config-conventional': ^11.0.0
   '@types/node': ^14.14.25
   '@typescript-eslint/eslint-plugin': ^4.14.2
   '@typescript-eslint/parser': ^4.14.2
@@ -4612,6 +4880,7 @@ specifiers:
   eslint: ^7.19.0
   eslint-config-prettier: ^7.2.0
   eslint-plugin-prettier: ^3.3.1
+  husky: '4'
   prettier: ^2.2.1
   standard-version: ^9.1.0
   tsup: ^3.12.1
