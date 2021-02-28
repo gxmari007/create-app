@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/gxmari007/create-template/compare/v0.3.2...v0.3.3) (2021-02-28)
+
+
+### Bug Fixes
+
+* need rollup support ([bedd75a](https://github.com/gxmari007/create-template/commit/bedd75a338850368ff942b88710feea301ffbaf9))
+
 ### [0.3.2](https://github.com/gxmari007/create-template/compare/v0.3.1...v0.3.2) (2021-02-28)
 
 ### [0.3.1](https://github.com/gxmari007/create-template/compare/v0.3.0...v0.3.1) (2021-02-28)
