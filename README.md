@@ -31,6 +31,7 @@ npm init @gxmari007/template --help
 
 - lib-ts
 - vite-plugin
+- vue-component
 
 ## License
 
